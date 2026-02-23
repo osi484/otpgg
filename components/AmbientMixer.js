@@ -91,9 +91,16 @@ class AmbientMixer extends HTMLElement {
 
     setupAudio() {
         this.sounds.forEach(sound => {
-            const audio = new Audio(sound.url);
-            audio.loop = true;
-            this.audioElements[sound.id] = audio;
+            try {
+                const audio = new Audio(sound.url);
+                audio.loop = true;
+                audio.onerror = () => {
+                    console.warn(`사운드 파일을 불러올 수 없습니다: ${sound.label}`);
+                };
+                this.audioElements[sound.id] = audio;
+            } catch (e) {
+                console.error(`오디오 초기화 에러: ${e.message}`);
+            }
         });
     }
 
@@ -105,17 +112,24 @@ class AmbientMixer extends HTMLElement {
         this.shadowRoot.querySelectorAll('.volume-slider').forEach(slider => {
             slider.oninput = (e) => {
                 const id = slider.dataset.id;
-                this.audioElements[id].volume = e.target.value;
+                if (this.audioElements[id]) {
+                    this.audioElements[id].volume = e.target.value;
+                }
             };
         });
     }
 
     toggleSound(id, btn) {
         const audio = this.audioElements[id];
+        if (!audio) return;
+
         if (audio.paused) {
-            audio.play().catch(e => console.log("Audio play blocked by browser. Click anywhere to enable."));
-            btn.classList.add('active');
-            btn.innerHTML = '<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+            audio.play().then(() => {
+                btn.classList.add('active');
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+            }).catch(e => {
+                console.warn("재생이 차단되었습니다. 페이지를 클릭한 후 다시 시도하세요.");
+            });
         } else {
             audio.pause();
             btn.classList.remove('active');
