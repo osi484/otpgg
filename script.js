@@ -21,40 +21,43 @@ const LANG_PACKAGE = {
         footerAttribution: "본 서비스의 음원은 공유마당의 자유이용 저작물을 활용하였습니다.",
         popupMessage: "고생하셨습니다! 잠시 휴식하세요. ✨",
         notificationBody: "고생하셨습니다! 잠시 휴식하세요.",
-        infoTitle1: "백색소음의 과학적 효과",
-        infoText1: "백색소음(White Noise)은 모든 주파수 대역에서 일정한 에너지를 가진 소리로, 주변의 불필요한 소음을 차단하는 '마스킹 효과'를 제공합니다. 연구에 따르면 일정한 배경 소음은 뇌의 알파파를 자극하여 심리적 안정감을 주고 깊은 몰입 상태로 유도하는 데 도움을 줍니다.",
-        infoTitle2: "뽀모도로 기법 사용 설명서",
-        infoText2: "뽀모도로(Pomodoro) 기법은 25분간의 강도 높은 집중과 5분간의 짧은 휴식을 반복하는 방법입니다. 인간의 집중력 한계를 고려한 이 리듬은 뇌의 피로를 방지하고 시간 사용의 효율성을 극대화합니다. Zen Focus 타이머를 활용해 당신만의 완벽한 몰입 루틴을 만들어보세요."
-    },
-    en: {
-        todayFocus: "Today's Focus: ",
-        minUnit: " min",
-        minUnitLabel: "min",
-        focusMode: "Focus Mode",
-        start: "START",
-        pause: "PAUSE",
-        resume: "RESUME",
-        reset: "RESET TIMER",
-        volume: "Volume",
-        soundscape: "Soundscape",
-        soundRain: "Soft Rain",
-        soundForest: "Deep Forest",
-        soundCampfire: "Crackling Campfire",
-        soundOcean: "Gentle Ocean",
-        rituals: "Daily Rituals",
-        clearCompleted: "Clear Completed",
-        todoPlaceholder: "Record today's flow...",
-        footerSub: "Minimalist Flow Tool.",
-        footerAttribution: "Audio assets provided by Gong-yu Madang (Open License).",
-        popupMessage: "Well done! Take a break. ✨",
-        notificationBody: "Well done! Take a break.",
-        infoTitle1: "The Science of White Noise",
-        infoText1: "White noise is a sound that contains every frequency at a consistent intensity, providing a 'masking effect' that blocks distracting background noise. Research suggests that a steady stream of ambient sound can stimulate alpha waves in the brain, promoting psychological stability and facilitating deep focus.",
-        infoTitle2: "Pomodoro Technique Guide",
-        infoText2: "The Pomodoro Technique is a time management method that involves 25 minutes of intense focus followed by a 5-minute break. This rhythm, designed around human attention spans, prevents mental fatigue and maximizes productivity. Use Zen Focus to build your own perfect flow routine."
-    }
-};
-
+                        infoTitle1: "백색소음의 과학적 효과",
+                        infoText1: "백색소음(White Noise)은 모든 주파수 대역에서 일정한 에너지를 가진 소리로, 주변의 불필요한 소음을 차단하는 '마스킹 효과'를 제공합니다. 연구에 따르면 일정한 배경 소음은 뇌의 알파파를 자극하여 심리적 안정감을 주고 깊은 몰입 상태로 유도하는 데 도움을 줍니다.",
+                        infoTitle2: "뽀모도로 기법 사용 설명서",
+                        infoText2: "뽀모도로(Pomodoro) 기법은 25분간의 강도 높은 집중과 5분간의 짧은 휴식을 반복하는 방법입니다. 인간의 집중력 한계를 고려한 이 리듬은 뇌의 피로를 방지하고 시간 사용의 효율성을 극대화합니다. Zen Focus 타이머를 활용해 당신만의 완벽한 몰입 루틴을 만들어보세요.",
+                        infoTitle3: "딥 워크를 위한 환경 설정",
+                        infoText3: "몰입(Deep Work)을 위해서는 감각의 통제가 필수적입니다. 20-22도의 적절한 온도, 간접 조명을 활용한 시각적 안정, 그리고 스마트폰 알림 차단은 기본입니다. 여기에 Zen Focus의 백색소음을 더해 청각적 커튼을 친다면, 당신의 뇌는 즉시 고도의 집중 상태에 진입할 준비를 마칠 것입니다."
+                    },
+                    en: {
+                        todayFocus: "Today's Focus: ",
+                        minUnit: " min",
+                        minUnitLabel: "min",
+                        focusMode: "Focus Mode",
+                        start: "START",
+                        pause: "PAUSE",
+                        resume: "RESUME",
+                        reset: "RESET TIMER",
+                        volume: "Volume",
+                        soundscape: "Soundscape",
+                        soundRain: "Soft Rain",
+                        soundForest: "Deep Forest",
+                        soundCampfire: "Crackling Campfire",
+                        soundOcean: "Gentle Ocean",
+                        rituals: "Daily Rituals",
+                        clearCompleted: "Clear Completed",
+                        todoPlaceholder: "Record today's flow...",
+                        footerSub: "Minimalist Flow Tool.",
+                        footerAttribution: "Audio assets provided by Gong-yu Madang (Open License).",
+                        popupMessage: "Well done! Take a break. ✨",
+                        notificationBody: "Well done! Take a break.",
+                        infoTitle1: "The Science of White Noise",
+                        infoText1: "White noise is a sound that contains every frequency at a consistent intensity, providing a 'masking effect' that blocks distracting background noise. Research suggests that a steady stream of ambient sound can stimulate alpha waves in the brain, promoting psychological stability and facilitating deep focus.",
+                        infoTitle2: "Pomodoro Technique Guide",
+                        infoText2: "The Pomodoro Technique is a time management method that involves 25 minutes of intense focus followed by a 5-minute break. This rhythm, designed around human attention spans, prevents mental fatigue and maximizes productivity. Use Zen Focus to build your own perfect flow routine.",
+                        infoTitle3: "Setting Environment for Deep Work",
+                        infoText3: "To achieve Deep Work, controlling your sensory environment is crucial. Maintaining a room temperature of 20-22°C, using soft indirect lighting, and eliminating digital distractions are the fundamentals. By adding Zen Focus's ambient sounds as an 'auditory curtain,' your brain will be primed for high-level concentration."
+                    }
+                };
 const timerDisplay = document.getElementById('timer-display');
 const minutesInput = document.getElementById('minutes-input');
 const startBtn = document.getElementById('start-btn');
@@ -114,38 +117,43 @@ function updateFocusTip() {
 // Modal Content Data
 const modalData = {
     privacy: {
-        ko: `<h3 class="text-lg text-slate-100 uppercase tracking-widest font-normal border-b border-slate-800 pb-4">개인정보 처리방침</h3>
-             <div class="space-y-4 py-2">
-                <section>
-                    <h4 class="text-slate-200 font-medium mb-1">1. 데이터 수집 및 저장</h4>
-                    <p>Zen Focus는 서버에 어떠한 개인정보도 수집하거나 저장하지 않습니다. 모든 서비스 데이터(할 일 목록, 통계 등)는 브라우저의 <span class="text-slate-100">로컬 스토리지(Local Storage)</span>에만 저장되어 사용자의 기기를 떠나지 않습니다.</p>
+        ko: `<div class="space-y-6">
+                <h3 class="text-xl font-medium text-slate-100 border-b border-slate-800 pb-4 uppercase tracking-widest">개인정보 처리방침</h3>
+                <section class="space-y-3">
+                    <h4 class="text-slate-200 font-medium">1. 데이터 수집 및 보관</h4>
+                    <p class="text-slate-400">Zen Focus는 사용자의 개인 식별 정보(이름, 이메일 등)를 서버에 수집하거나 저장하지 않습니다. 사용자의 할 일 목록, 집중 시간 통계, 환경 설정 데이터는 전적으로 사용자의 브라우저 <span class="text-slate-200">로컬 스토리지(LocalStorage)</span>에만 보관되며, 당사는 이 데이터에 접근할 수 없습니다.</p>
                 </section>
-                <section>
-                    <h4 class="text-slate-200 font-medium mb-1">2. 쿠키 및 광고 서비스</h4>
-                    <p>Google AdSense를 포함한 제3자 제공업체는 쿠키를 사용하여 사용자의 이전 방문 기록을 바탕으로 맞춤형 광고를 제공합니다. 구글의 광고 쿠키 사용을 통해 사용자가 본 사이트 및 다른 사이트를 방문할 때 적절한 광고를 게재할 수 있습니다.</p>
+                <section class="space-y-3">
+                    <h4 class="text-slate-200 font-medium">2. 쿠키 및 제3자 광고 서비스</h4>
+                    <p class="text-slate-400">당사는 광고 게재를 위해 Google AdSense 등 제3자 광고 서비스를 이용합니다. Google을 포함한 광고 제공업체는 사용자의 웹사이트 방문 기록을 기반으로 맞춤형 광고를 제공하기 위해 <span class="text-slate-200">쿠키(Cookie)</span>를 사용합니다.</p>
                 </section>
-                <section>
-                    <h4 class="text-slate-200 font-medium mb-1">3. 사용자 선택권</h4>
-                    <p>사용자는 <a href="https://www.google.com/settings/ads" target="_blank" class="text-blue-400 underline">구글 광고 설정</a> 페이지를 통해 맞춤형 광고를 해제할 수 있습니다. 또한 브라우저 설정을 통해 모든 쿠키를 거부하거나 로컬 데이터를 삭제할 수 있습니다.</p>
+                <section class="space-y-3">
+                    <h4 class="text-slate-200 font-medium">3. 사용자 선택권 및 쿠키 거부</h4>
+                    <p class="text-slate-400">사용자는 언제든지 <a href="https://www.google.com/settings/ads" target="_blank" class="text-blue-400 underline">Google 광고 설정</a>을 방문하여 맞춤형 광고를 해제할 수 있습니다. 또한, 브라우저 설정을 통해 쿠키 수집을 거부하거나 기존 데이터를 삭제할 수 있습니다.</p>
+                </section>
+                <section class="space-y-3 pt-4 border-t border-slate-800">
+                    <p class="text-[11px] text-slate-500 italic">본 방침은 Google 애드센스 정책 및 개인정보 보호법을 준수합니다.</p>
                 </section>
              </div>`,
-        en: `<h3 class="text-lg text-slate-100 uppercase tracking-widest font-normal border-b border-slate-800 pb-4">Privacy Policy</h3>
-             <div class="space-y-4 py-2">
-                <section>
-                    <h4 class="text-slate-200 font-medium mb-1">1. Data Collection & Storage</h4>
-                    <p>Zen Focus does not collect or store any personal data on servers. All service data (todos, stats, etc.) is stored exclusively in your browser's <span class="text-slate-100">Local Storage</span>, meaning it never leaves your device.</p>
+        en: `<div class="space-y-6">
+                <h3 class="text-xl font-medium text-slate-100 border-b border-slate-800 pb-4 uppercase tracking-widest">Privacy Policy</h3>
+                <section class="space-y-3">
+                    <h4 class="text-slate-200 font-medium">1. Data Collection & Storage</h4>
+                    <p class="text-slate-400">Zen Focus does not collect or store any personally identifiable information (PII) on our servers. Your task lists, focus statistics, and preferences are stored exclusively within your browser's <span class="text-slate-200">LocalStorage</span>. We have no access to this data.</p>
                 </section>
-                <section>
-                    <h4 class="text-slate-200 font-medium mb-1">2. Cookies & Advertising</h4>
-                    <p>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to your sites and/or other sites on the Internet.</p>
+                <section class="space-y-3">
+                    <h4 class="text-slate-200 font-medium">2. Cookies & Third-Party Advertising</h4>
+                    <p class="text-slate-400">We use third-party advertising services like Google AdSense. Vendors, including Google, use <span class="text-slate-200">Cookies</span> to serve ads based on your prior visits to this or other websites on the internet.</p>
                 </section>
-                <section>
-                    <h4 class="text-slate-200 font-medium mb-1">3. User Choices</h4>
-                    <p>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" class="text-blue-400 underline">Ads Settings</a>. You can also manage or delete cookies and local storage data via your browser settings.</p>
+                <section class="space-y-3">
+                    <h4 class="text-slate-200 font-medium">3. User Rights & Opt-out</h4>
+                    <p class="text-slate-400">You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" class="text-blue-400 underline">Ads Settings</a>. You can also manage or disable cookies and clear local data via your browser's security settings.</p>
+                </section>
+                <section class="space-y-3 pt-4 border-t border-slate-800">
+                    <p class="text-[11px] text-slate-500 italic">This policy complies with Google AdSense terms and global privacy standards.</p>
                 </section>
              </div>`
-    },
-    contact: {
+    },    contact: {
         ko: `<h3 class="text-lg text-slate-100 uppercase tracking-widest font-normal border-b border-slate-800 pb-4">문의하기</h3>
              <p>서비스 이용 중 불편한 점이나 제안 사항이 있다면 아래 이메일로 연락주세요.</p>
              <p class="text-slate-100 font-medium">Email: setmakegame@gmail.com</p>
