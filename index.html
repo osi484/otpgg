@@ -62,10 +62,10 @@
             </div>
         </header>
 
-        <!-- Top Ad Slot (ad-top) -->
-        <div class="w-full max-w-2xl ad-placeholder h-20 md:h-24" id="ad-top">
-            <!-- AdSense Code Here -->
-            ADVERTISEMENT
+        <!-- Focus Tip Area (ad-top was here) -->
+        <div class="w-full max-w-2xl glass py-4 px-6 rounded-2xl text-center flex items-center justify-center gap-3 group border-slate-800/30 hover:border-slate-700 transition-all duration-500 overflow-hidden" id="focus-tip-container">
+            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-semibold border border-slate-700 px-2 py-0.5 rounded-md group-hover:text-slate-300 transition-colors">TIP</span>
+            <p id="focus-tip-text" class="text-xs md:text-sm font-light text-slate-400 group-hover:text-slate-200 transition-colors truncate"></p>
         </div>
 
         <div class="w-full flex flex-col lg:flex-row gap-8 items-start justify-center">
@@ -237,6 +237,37 @@
         const langToggle = document.getElementById('lang-toggle');
         const infoModal = document.getElementById('info-modal');
         const modalContent = document.getElementById('modal-content');
+        const focusTipText = document.getElementById('focus-tip-text');
+
+        // Focus Tips Data
+        const FOCUS_TIPS = {
+            ko: [
+                "휴대폰을 다른 방에 두는 것만으로도 집중력이 올라갑니다.",
+                "뽀모도로 기법(25분 집중, 5분 휴식)을 사용해 보세요.",
+                "주변을 정리하면 뇌의 인지 부하가 줄어듭니다.",
+                "멀티태스킹은 집중력의 가장 큰 적입니다.",
+                "잠깐의 스트레칭은 뇌에 산소를 공급해 줍니다.",
+                "한 번에 오직 한 가지 일에만 몰입하세요.",
+                "적절한 수분 섭취는 뇌 기능을 활발하게 유지합니다.",
+                "심호흡 3번으로 몰입을 시작해 보세요."
+            ],
+            en: [
+                "Keeping your phone in another room boosts concentration.",
+                "Try the Pomodoro technique (25m focus, 5m rest).",
+                "Decluttering your space reduces cognitive load on the brain.",
+                "Multitasking is the biggest enemy of deep focus.",
+                "Short stretching supplies oxygen to your brain.",
+                "Immerse yourself in only one task at a time.",
+                "Proper hydration keeps your brain functions active.",
+                "Start your flow with three deep breaths."
+            ]
+        };
+
+        let currentTipIndex = Math.floor(Math.random() * FOCUS_TIPS.ko.length);
+
+        function updateFocusTip() {
+            focusTipText.textContent = FOCUS_TIPS[currentLang][currentTipIndex];
+        }
 
         // Modal Content Data
         const modalData = {
@@ -306,6 +337,7 @@
             currentLang = currentLang === 'ko' ? 'en' : 'ko';
             localStorage.setItem('zen-lang', currentLang);
             applyTranslations();
+            updateFocusTip();
             renderTodos();
         };
 
@@ -476,6 +508,7 @@
         }
 
         applyTranslations();
+        updateFocusTip();
         renderTodos();
         updateDisplay();
     </script>
