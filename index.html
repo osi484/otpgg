@@ -54,6 +54,7 @@
                     <option value="https://actions.google.com/sounds/v1/water/rain_on_roof.mp3">Soft Rain</option>
                     <option value="https://actions.google.com/sounds/v1/weather/wind_heavy_swirl.mp3">Soft Wind</option>
                     <option value="https://actions.google.com/sounds/v1/foley/static_noise.mp3">White Noise</option>
+                    <option value="https://actions.google.com/sounds/v1/water/waves_crashing_on_shore.mp3">Deep Ocean</option>
                 </select>
             </div>
         </section>
@@ -79,7 +80,7 @@
     </div>
 
     <!-- Hidden Audio Element -->
-    <audio id="bg-audio" loop></audio>
+    <audio id="bg-audio" loop preload="auto"></audio>
 
     <script>
         // DOM Elements
@@ -97,6 +98,11 @@
         let timerInterval = null;
         let isRunning = false;
 
+        // Audio Error Handling
+        bgAudio.onerror = () => {
+            console.error("오디오 로드 실패: URL이 유효하지 않거나 네트워크 문제입니다.", bgAudio.src);
+        };
+
         // --- Timer Logic ---
         function updateDisplay() {
             const m = Math.floor(timeLeft / 60);
@@ -104,15 +110,16 @@
             timerDisplay.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
         }
 
-        function startTimer() {
+        async function startTimer() {
             if (isRunning) {
                 pauseTimer();
                 return;
             }
 
-            // Audio setup on user interaction
+            // 1. 오디오 소스 설정 및 로드 (사용자 클릭 시점에 강제 수행)
             if (bgAudio.src !== soundSelect.value) {
                 bgAudio.src = soundSelect.value;
+                bgAudio.load();
             }
 
             isRunning = true;
@@ -120,7 +127,16 @@
             startBtn.classList.replace('bg-slate-100', 'bg-slate-700');
             startBtn.classList.replace('text-slate-900', 'text-slate-100');
             
-            bgAudio.play().catch(e => console.log("Audio play blocked."));
+            // 2. 오디오 재생 시도 (Promise 핸들링 및 디버깅)
+            try {
+                await bgAudio.play();
+                console.log("오디오 재생 성공:", soundSelect.value);
+            } catch (e) {
+                console.error("오디오 재생 실패 (브라우저 정책 또는 로드 에러):", e.name, e.message);
+                if (e.name === 'NotAllowedError') {
+                    console.warn("자동 재생이 차단되었습니다. 사용자 상호작용이 더 필요할 수 있습니다.");
+                }
+            }
 
             timerInterval = setInterval(() => {
                 if (timeLeft > 0) {
