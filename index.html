@@ -9,6 +9,7 @@
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3239/3239147.png">
     <title>Zen Focus | 집중을 위한 공간</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -21,6 +22,20 @@
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .celebration-glass {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(168, 85, 247, 0.2));
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        @keyframes bounce-in {
+            0% { transform: translate(-50%, 20px) scale(0.9); opacity: 0; }
+            50% { transform: translate(-50%, -10px) scale(1.05); opacity: 1; }
+            100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+        }
+        .animate-celebrate {
+            animation: bounce-in 0.6s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
         }
         .ad-placeholder {
             background: rgba(30, 41, 59, 0.3);
@@ -167,9 +182,10 @@
     </div>
 
     <!-- Notification Popup -->
-    <div id="finish-popup" class="fixed bottom-10 left-1/2 -translate-x-1/2 glass px-8 py-4 rounded-2xl shadow-2xl border-slate-500/20 transform translate-y-32 opacity-0 transition-all duration-700 flex items-center gap-4 z-50">
-        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-        <p id="popup-text" class="text-sm text-slate-200 font-light" data-i18n="popupMessage">고생하셨습니다! 잠시 휴식하세요. ✨</p>
+    <div id="finish-popup" class="fixed bottom-10 left-1/2 -translate-x-1/2 celebration-glass px-10 py-5 rounded-[2rem] shadow-2xl transform translate-y-32 opacity-0 transition-all duration-700 flex flex-col items-center gap-2 z-50 text-center min-w-[280px]">
+        <div class="text-3xl mb-1">🎉</div>
+        <p id="popup-text" class="text-base text-slate-100 font-medium tracking-tight" data-i18n="popupMessage">고생하셨습니다! 잠시 휴식하세요. ✨</p>
+        <div class="text-[10px] text-slate-400 uppercase tracking-widest mt-1 opacity-70">Focus Session Completed</div>
     </div>
 
     <audio id="bg-audio" loop preload="auto"></audio>
@@ -389,18 +405,44 @@
         // Notification Logic
         function showNotification() {
             finishPopup.classList.remove('translate-y-32', 'opacity-0');
+            finishPopup.classList.add('animate-celebrate');
+            
             setTimeout(() => {
                 finishPopup.classList.add('translate-y-32', 'opacity-0');
-            }, 5000);
+                finishPopup.classList.remove('animate-celebrate');
+            }, 6000);
             
             if (Notification.permission === "granted") {
                 new Notification("Zen Focus", { 
                     body: LANG_PACKAGE[currentLang].notificationBody, 
-                    icon: "/favicon.ico" 
+                    icon: "https://cdn-icons-png.flaticon.com/512/3239/3239147.png" 
                 });
             } else if (Notification.permission !== "denied") {
                 Notification.requestPermission();
             }
+        }
+
+        // Confetti Celebration
+        function fireConfetti() {
+            const duration = 3 * 1000;
+            const animationEnd = Date.now() + duration;
+            const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            const interval = setInterval(function() {
+                const timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                const particleCount = 50 * (timeLeft / duration);
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
         }
 
         // 초기 볼륨 설정
@@ -479,6 +521,7 @@
             updateDisplay();
             
             if (finished) {
+                fireConfetti();
                 showNotification();
                 resetTimer();
             }
