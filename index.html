@@ -18,6 +18,18 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        .ad-placeholder {
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px dashed rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            border-radius: 1rem;
+        }
         input::placeholder { color: rgba(255, 255, 255, 0.3); }
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
@@ -29,6 +41,9 @@
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center p-6 md:p-8">
 
+    <!-- Google AdSense Global Script Placeholder -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
     <!-- Language Toggle (Bottom Right) -->
     <div class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50">
         <button id="lang-toggle" class="glass px-5 py-3 md:px-4 md:py-2 rounded-full text-[11px] md:text-[10px] tracking-[0.2em] text-slate-500 hover:text-slate-200 transition-all uppercase font-light border border-slate-800/50 hover:border-slate-700 shadow-xl">
@@ -38,7 +53,7 @@
         </button>
     </div>
 
-    <div class="max-w-2xl w-full space-y-10 md:space-y-12 my-8 md:my-12">
+    <div class="max-w-5xl w-full flex flex-col items-center gap-10 md:gap-12 my-8 md:my-12">
         <header class="text-center space-y-5">
             <h1 class="text-3xl md:text-4xl font-extralight tracking-[0.3em] text-slate-100 uppercase">Zen Focus</h1>
             <div id="stats-display" class="text-[10px] md:text-xs text-slate-500 tracking-widest uppercase bg-slate-800/30 py-2.5 px-5 rounded-full inline-block">
@@ -46,61 +61,84 @@
             </div>
         </header>
 
-        <main class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
-            <!-- Timer Section -->
-            <section class="glass p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl text-center space-y-8 md:space-y-10 order-1">
-                <div class="space-y-3">
-                    <div id="timer-display" class="text-7xl md:text-8xl font-thin tracking-tighter text-slate-100 transition-all duration-500">25:00</div>
-                    <div id="timer-label" data-i18n="focusMode" class="text-[10px] text-slate-500 uppercase tracking-[0.4em]">Focus Mode</div>
-                </div>
+        <!-- Top Ad Slot -->
+        <div class="w-full max-w-2xl ad-placeholder h-20 md:h-24" id="ad-top">
+            <!-- AdSense Code Here -->
+            ADVERTISEMENT
+        </div>
 
-                <div class="flex items-center justify-center gap-4 py-2">
-                    <input type="number" id="minutes-input" value="25" min="1" max="999" 
-                        class="w-20 md:w-24 bg-transparent border-b border-slate-700 text-center text-3xl font-light focus:outline-none focus:border-slate-400 transition-colors py-2">
-                    <span data-i18n="minUnitLabel" class="text-slate-500 font-light">min</span>
-                </div>
+        <div class="w-full flex flex-col lg:flex-row gap-8 items-start justify-center">
+            
+            <main class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start max-w-4xl w-full">
+                <!-- Timer Section -->
+                <section class="glass p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl text-center space-y-8 md:space-y-10 order-1">
+                    <div class="space-y-3">
+                        <div id="timer-display" class="text-7xl md:text-8xl font-thin tracking-tighter text-slate-100 transition-all duration-500">25:00</div>
+                        <div id="timer-label" data-i18n="focusMode" class="text-[10px] text-slate-500 uppercase tracking-[0.4em]">Focus Mode</div>
+                    </div>
 
-                <div class="flex flex-col gap-4">
-                    <button id="start-btn" data-i18n="start" class="w-full bg-slate-100 text-slate-900 font-medium py-5 md:py-5 rounded-2xl hover:bg-white transition-all active:scale-[0.96] tracking-widest text-sm uppercase shadow-lg">START</button>
-                    <button id="reset-btn" data-i18n="reset" class="w-full bg-transparent text-slate-500 hover:text-slate-300 py-3 rounded-2xl transition-all text-[10px] tracking-widest uppercase active:scale-95">RESET TIMER</button>
-                </div>
+                    <div class="flex items-center justify-center gap-4 py-2">
+                        <input type="number" id="minutes-input" value="25" min="1" max="999" 
+                            class="w-20 md:w-24 bg-transparent border-b border-slate-700 text-center text-3xl font-light focus:outline-none focus:border-slate-400 transition-colors py-2">
+                        <span data-i18n="minUnitLabel" class="text-slate-500 font-light">min</span>
+                    </div>
 
-                <div class="pt-8 border-t border-slate-800/50 space-y-6">
-                    <div class="flex flex-col gap-3">
-                        <div class="flex items-center justify-between">
-                            <span data-i18n="volume" class="text-[10px] text-slate-500 uppercase tracking-widest">Volume</span>
+                    <div class="flex flex-col gap-4">
+                        <button id="start-btn" data-i18n="start" class="w-full bg-slate-100 text-slate-900 font-medium py-5 md:py-5 rounded-2xl hover:bg-white transition-all active:scale-[0.96] tracking-widest text-sm uppercase shadow-lg">START</button>
+                        <button id="reset-btn" data-i18n="reset" class="w-full bg-transparent text-slate-500 hover:text-slate-300 py-3 rounded-2xl transition-all text-[10px] tracking-widest uppercase active:scale-95">RESET TIMER</button>
+                    </div>
+
+                    <div class="pt-8 border-t border-slate-800/50 space-y-6">
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-center justify-between">
+                                <span data-i18n="volume" class="text-[10px] text-slate-500 uppercase tracking-widest">Volume</span>
+                            </div>
+                            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.3" 
+                                class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-slate-400">
                         </div>
-                        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.3" 
-                            class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-slate-400">
+                        <div class="flex items-center justify-between">
+                            <span data-i18n="soundscape" class="text-[10px] text-slate-500 uppercase tracking-widest">Soundscape</span>
+                            <select id="sound-select" class="bg-transparent text-xs text-slate-400 focus:outline-none cursor-pointer text-right hover:text-slate-200 transition-colors py-1">
+                                <option value="assets/rain.mp3" data-i18n="soundRain">Soft Rain</option>
+                                <option value="assets/Ambience.mp3" data-i18n="soundForest">Deep Forest</option>
+                                <option value="assets/Campfire.mp3" data-i18n="soundCampfire">Crackling Campfire</option>
+                                <option value="assets/Ocean Waves.mp3" data-i18n="soundOcean">Gentle Ocean</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <span data-i18n="soundscape" class="text-[10px] text-slate-500 uppercase tracking-widest">Soundscape</span>
-                        <select id="sound-select" class="bg-transparent text-xs text-slate-400 focus:outline-none cursor-pointer text-right hover:text-slate-200 transition-colors py-1">
-                            <option value="assets/rain.mp3" data-i18n="soundRain">Soft Rain</option>
-                            <option value="assets/Ambience.mp3" data-i18n="soundForest">Deep Forest</option>
-                            <option value="assets/Campfire.mp3" data-i18n="soundCampfire">Crackling Campfire</option>
-                            <option value="assets/Ocean Waves.mp3" data-i18n="soundOcean">Gentle Ocean</option>
-                        </select>
+                </section>
+
+                <!-- Tasks Section -->
+                <section class="glass p-8 md:p-8 rounded-[2rem] md:rounded-[2.5rem] shadow-xl space-y-6 order-2 flex flex-col">
+                    <div class="flex items-center justify-between px-2">
+                        <h2 data-i18n="rituals" class="text-[10px] font-semibold text-slate-500 uppercase tracking-[0.3em]">Daily Rituals</h2>
+                        <button id="clear-completed-btn" data-i18n="clearCompleted" class="text-[9px] text-slate-600 hover:text-red-400 transition-colors uppercase tracking-widest py-2">Clear Completed</button>
                     </div>
-                </div>
-            </section>
+                    
+                    <div class="relative group">
+                        <input type="text" id="todo-input" data-i18n-placeholder="todoPlaceholder" placeholder="오늘의 몰입을 기록하세요..." 
+                            class="w-full bg-slate-800/20 border border-slate-800/50 rounded-2xl pl-5 pr-14 py-4.5 md:py-4 focus:outline-none focus:border-slate-600 transition-all text-sm placeholder:text-slate-600 h-14">
+                        <button id="add-todo-btn" class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center hover:bg-slate-700 transition-colors text-slate-400">+</button>
+                    </div>
 
-            <!-- Tasks Section -->
-            <section class="glass p-8 md:p-8 rounded-[2rem] md:rounded-[2.5rem] shadow-xl space-y-6 order-2">
-                <div class="flex items-center justify-between px-2">
-                    <h2 data-i18n="rituals" class="text-[10px] font-semibold text-slate-500 uppercase tracking-[0.3em]">Daily Rituals</h2>
-                    <button id="clear-completed-btn" data-i18n="clearCompleted" class="text-[9px] text-slate-600 hover:text-red-400 transition-colors uppercase tracking-widest py-2">Clear Completed</button>
-                </div>
-                
-                <div class="relative group">
-                    <input type="text" id="todo-input" data-i18n-placeholder="todoPlaceholder" placeholder="오늘의 몰입을 기록하세요..." 
-                        class="w-full bg-slate-800/20 border border-slate-800/50 rounded-2xl pl-5 pr-14 py-4.5 md:py-4 focus:outline-none focus:border-slate-600 transition-all text-sm placeholder:text-slate-600 h-14">
-                    <button id="add-todo-btn" class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center hover:bg-slate-700 transition-colors text-slate-400">+</button>
-                </div>
+                    <ul id="todo-list" class="space-y-4 max-h-[340px] md:max-h-[340px] overflow-y-auto pr-1 custom-scrollbar flex-1"></ul>
 
-                <ul id="todo-list" class="space-y-4 max-h-[340px] md:max-h-[400px] overflow-y-auto pr-1 custom-scrollbar"></ul>
-            </section>
-        </main>
+                    <!-- Bottom Ad Slot (inside Tasks Section) -->
+                    <div class="mt-4 ad-placeholder h-20 w-full" id="ad-bottom">
+                        <!-- AdSense Code Here -->
+                        ADVERTISEMENT
+                    </div>
+                </section>
+            </main>
+
+            <!-- Sidebar Ad Slot (Desktop only) -->
+            <aside class="hidden lg:flex flex-col gap-6">
+                <div class="ad-placeholder w-[160px] h-[600px]" id="ad-sidebar">
+                    <!-- AdSense Code Here -->
+                    ADVERTISEMENT
+                </div>
+            </aside>
+        </div>
 
         <footer class="text-center text-slate-700 text-[9px] tracking-[0.2em] space-y-3 pt-8 pb-12 md:pb-0">
             <div class="uppercase">&copy; 2024 Zen Focus. <span data-i18n="footerSub">Minimalist Flow Tool.</span></div>
