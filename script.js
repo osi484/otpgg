@@ -25,8 +25,16 @@ const LANG_PACKAGE = {
         infoText1: "백색소음(White Noise)은 모든 주파수 대역에서 일정한 에너지를 가진 소리로, 주변의 불필요한 소음을 차단하는 '마스킹 효과'를 제공합니다. 연구에 따르면 일정한 배경 소음은 뇌의 알파파를 자극하여 심리적 안정감을 주고 깊은 몰입 상태로 유도하는 데 도움을 줍니다.",
         infoTitle2: "뽀모도로 기법 사용 설명서",
         infoText2: "뽀모도로(Pomodoro) 기법은 25분간의 강도 높은 집중과 5분간의 짧은 휴식을 반복하는 방법입니다. 인간의 집중력 한계를 고려한 이 리듬은 뇌의 피로를 방지하고 시간 사용의 효율성을 극대화합니다. Zen Focus 타이머를 활용해 당신만의 완벽한 몰입 루틴을 만들어보세요.",
-        infoTitle3: "딥 워크를 위한 환경 설정",
-        infoText3: "몰입(Deep Work)을 위해서는 감각의 통제가 필수적입니다. 20-22도의 적절한 온도, 간접 조명을 활용한 시각적 안정, 그리고 스마트폰 알림 차단은 기본입니다. 여기에 Zen Focus의 백색소음을 더해 청각적 커튼을 친다면, 당신의 뇌는 즉시 고도의 집중 상태에 진입할 준비를 마칠 것입니다."
+        infoTitle3: "딥 워크 환경 설정",
+        infoText3: "몰입(Deep Work)을 위해서는 감각의 통제가 필수적입니다. 20-22도의 적절한 온도, 간접 조명을 활용한 시각적 안정, 그리고 스마트폰 알림 차단은 기본입니다. 여기에 Zen Focus의 백색소음을 더해 청각적 커튼을 친다면, 당신의 뇌는 즉시 고도의 집중 상태에 진입할 준비를 마칠 것입니다.",
+        infoTitle4: "집중을 위한 식단과 수분",
+        infoText4: "뇌는 우리 몸이 사용하는 에너지의 20%를 소비합니다. 몰입을 위해서는 안정적인 혈당 유지가 핵심입니다. 견과류나 베리류 같은 저혈당 식품(Low-GI)을 섭취하고, 미세한 탈수가 인지 능력을 저하시키지 않도록 시간당 한 잔의 물을 마시는 습관을 들이세요.",
+        infoTitle5: "디지털 디톡스의 중요성",
+        infoText5: "스마트폰 알림은 뇌의 도파민 회로를 자극하여 주의력을 분산시킵니다. 단 2초의 알림 확인만으로도 다시 깊은 몰입에 빠지는 데 평균 23분이 소요됩니다. Zen Focus를 사용하는 동안에는 기기를 '방해 금지 모드'로 설정하고 디지털 소음에서 완전히 벗어나보세요.",
+        navGuide: "가이드",
+        navMobile: "미니멀 몰입",
+        aboutTitle: "Zen Focus 소개",
+        aboutText: "Zen Focus는 현대인의 복잡한 디지털 환경 속에서 오직 '단 하나의 본질적인 일'에 몰입할 수 있도록 돕기 위해 탄생했습니다. 우리는 미니멀리즘 철학을 바탕으로, 불필요한 기능을 제거하고 고품질의 백색소음과 직관적인 타이머를 제공합니다. 당신의 창의성이 깨어나는 고요한 공간이 되기를 바랍니다."
     },
     en: {
         todayFocus: "Today's Focus: ",
@@ -55,7 +63,15 @@ const LANG_PACKAGE = {
         infoTitle2: "Pomodoro Technique Guide",
         infoText2: "The Pomodoro Technique is a time management method that involves 25 minutes of intense focus followed by a 5-minute break. This rhythm, designed around human attention spans, prevents mental fatigue and maximizes productivity. Use Zen Focus to build your own perfect flow routine.",
         infoTitle3: "Setting Environment for Deep Work",
-        infoText3: "To achieve Deep Work, controlling your sensory environment is crucial. Maintaining a room temperature of 20-22°C, using soft indirect lighting, and eliminating digital distractions are the fundamentals. By adding Zen Focus's ambient sounds as an 'auditory curtain,' your brain will be primed for high-level concentration."
+        infoText3: "To achieve Deep Work, controlling your sensory environment is crucial. Maintaining a room temperature of 20-22°C, using soft indirect lighting, and eliminating digital distractions are the fundamentals. By adding Zen Focus's ambient sounds as an 'auditory curtain,' your brain will be primed for high-level concentration.",
+        infoTitle4: "Diet and Hydration for Focus",
+        infoText4: "The brain consumes about 20% of your body's energy. Maintaining stable blood sugar levels is key to sustained immersion. Incorporate low-GI foods like nuts and berries into your diet, and make a habit of drinking a glass of water every hour to prevent mild dehydration from affecting your cognitive performance.",
+        infoTitle5: "The Importance of Digital Detox",
+        infoText5: "Smartphone notifications trigger dopamine loops that fragment our attention. Even a 2-second check can lead to an average of 23 minutes to regain deep focus. While using Zen Focus, set your devices to 'Do Not Disturb' and completely disconnect from digital noise to reclaim your concentration.",
+        navGuide: "Guide",
+        navMobile: "Minimalist Flow",
+        aboutTitle: "About Zen Focus",
+        aboutText: "Zen Focus was created to help people focus on 'the one essential thing' amidst today's complex digital distractions. Based on minimalist philosophy, we strip away the unnecessary to provide high-quality ambient sounds and an intuitive timer. We hope this becomes a quiet space where your creativity awakens."
     }
 };
 const timerDisplay = document.getElementById('timer-display');

@@ -28,12 +28,24 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-</head>
-<body class="min-h-screen flex flex-col items-center justify-center p-6 md:p-8">
-
     <!-- Google AdSense Global Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1337800001968718"
      crossorigin="anonymous"></script>
+</head>
+<body class="min-h-screen flex flex-col items-center p-6 md:p-8">
+
+    <!-- Navigation Menu -->
+    <nav class="w-full max-w-5xl flex justify-between items-center py-4 mb-8 border-b border-slate-800/30">
+        <div class="text-sm font-light tracking-[0.2em] text-slate-100 uppercase">Zen Focus</div>
+        <div class="hidden md:flex gap-8 text-[10px] tracking-widest uppercase text-slate-500">
+            <a href="#" class="hover:text-slate-200 transition-colors">Home</a>
+            <a href="#guide" class="hover:text-slate-200 transition-colors" data-i18n="navGuide">Guide</a>
+            <button onclick="openModal('privacy')" class="hover:text-slate-200 transition-colors uppercase">Privacy</button>
+            <button onclick="openModal('contact')" class="hover:text-slate-200 transition-colors uppercase">Contact</button>
+        </div>
+        <!-- Mobile Menu Placeholder / Language Toggle is enough for mobile -->
+        <div class="md:hidden text-[9px] text-slate-600 uppercase tracking-tighter" data-i18n="navMobile">Minimalist Flow</div>
+    </nav>
 
     <!-- Language Toggle (Bottom Right) -->
     <div class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50">
@@ -132,7 +144,7 @@
         </div>
 
         <!-- Informational Content Section -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl mx-auto pt-6">
+        <section id="guide" class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl mx-auto pt-6">
             <article class="glass p-8 rounded-[2rem] space-y-4 border-slate-800/40">
                 <h2 data-i18n="infoTitle1" class="text-lg font-light text-slate-100 tracking-wider uppercase">백색소음의 과학적 효과</h2>
                 <p data-i18n="infoText1" class="text-xs md:text-sm text-slate-400 leading-relaxed font-light"></p>
@@ -145,6 +157,20 @@
                 <h2 data-i18n="infoTitle3" class="text-lg font-light text-slate-100 tracking-wider uppercase">딥 워크 환경 설정</h2>
                 <p data-i18n="infoText3" class="text-xs md:text-sm text-slate-400 leading-relaxed font-light"></p>
             </article>
+            <article class="glass p-8 rounded-[2rem] space-y-4 border-slate-800/40">
+                <h2 data-i18n="infoTitle4" class="text-lg font-light text-slate-100 tracking-wider uppercase">집중을 위한 식단과 수분</h2>
+                <p data-i18n="infoText4" class="text-xs md:text-sm text-slate-400 leading-relaxed font-light"></p>
+            </article>
+            <article class="glass p-8 rounded-[2rem] space-y-4 border-slate-800/40">
+                <h2 data-i18n="infoTitle5" class="text-lg font-light text-slate-100 tracking-wider uppercase">디지털 디톡스의 중요성</h2>
+                <p data-i18n="infoText5" class="text-xs md:text-sm text-slate-400 leading-relaxed font-light"></p>
+            </article>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="w-full max-w-4xl mx-auto py-12 px-8 glass rounded-[2.5rem] border-slate-800/30 text-center space-y-6">
+            <h2 data-i18n="aboutTitle" class="text-xl font-light text-slate-100 tracking-[0.2em] uppercase">About Zen Focus</h2>
+            <p data-i18n="aboutText" class="text-sm text-slate-400 leading-loose font-light"></p>
         </section>
 
         <footer class="text-center text-slate-700 text-[9px] tracking-[0.2em] space-y-4 pt-8 pb-12 md:pb-0">
